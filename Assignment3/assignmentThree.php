@@ -1,9 +1,10 @@
 <?php
 require_once 'Address.php';
-require_once 'Customer.php';
 require_once 'Cart.php';
+require_once 'Customer.php';
 require_once 'Item.php';
 require_once 'ShippingApi.php';
+
 $billingAddress = new Address(
     "752 Wayne St",
     "UNIT 211",
