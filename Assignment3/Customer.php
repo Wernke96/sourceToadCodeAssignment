@@ -1,6 +1,4 @@
 <?php
-
-
 class Customer
 {
     private string $first_name;
@@ -68,14 +66,27 @@ class Customer
         $this->addresses = $addresses;
     }
 
-    public function getShippingAddress()
+    public function getShippingAddress() :Address
     {
         $shippingAddress = null;
         /** @var Address $address */
         foreach ($this->addresses as $address)
         {
             if($address->getType() == "Shipping") {
-                $shippingAddress = $address->getType();
+                $shippingAddress = $address;
+            }
+        }
+        return $shippingAddress;
+    }
+
+    public function getBillingAddress() :Address
+    {
+        $shippingAddress = null;
+        /** @var Address $address */
+        foreach ($this->addresses as $address)
+        {
+            if($address->getType() == "Billing") {
+                $shippingAddress = $address;
             }
         }
         return $shippingAddress;

@@ -1,6 +1,4 @@
 <?php
-
-
 class Address
 {
     private string $addressOne;
@@ -15,14 +13,15 @@ class Address
      * @param string $addressOne
      * @param string|null $addressTwo
      * @param string $city
-     * @param string $zip
+     * @param int $zip
      * @param string $state
+     * @param string $type
      */
     public function __construct(
         string $addressOne,
         ?string $addressTwo,
         string $city,
-        string $zip,
+        int $zip,
         string $state,
         string $type
     )
@@ -100,9 +99,9 @@ class Address
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getZip(): string
+    public function getZip(): int
     {
         return $this->zip;
     }
